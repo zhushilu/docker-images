@@ -18,7 +18,7 @@ index.tenxcloud.com/jimmy/jdk:7u80
 index.tenxcloud.com/jimmy/jdk:8u45
 ```
 
-##CentOS 7.2.1511
+## CentOS 7.2.1511
 
 ### 特性
 
