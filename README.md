@@ -6,7 +6,6 @@
 
 - CentOS 7.2.1511
 - JDK
-- Jetty
 - Logstash
 
 所有镜像已同步到时速云，可以直接使用。
@@ -16,6 +15,7 @@ index.tenxcloud.com/jimmy/centos:7.2.1511
 index.tenxcloud.com/jimmy/jdk:6u25
 index.tenxcloud.com/jimmy/jdk:7u80
 index.tenxcloud.com/jimmy/jdk:8u45
+index.tenxcloud.com/jimmy/logstash:5.3.0
 ```
 
 ## CentOS 7.2.1511
@@ -58,9 +58,24 @@ JAVA_HOME=/usr/java/default
 
 可以作为所有依赖JDK服务的基础镜像使用。
 
-## Jetty
-
 ## Logstash
+
+基于**Logstash5.3.0**官方安装包制作。
+
+**使用方式**
+
+修改以下环境变量
+
+```
+# 收集的日志文件位置，可以使用通配符
+ENV LogFile /var/log/yum.log
+# 日志格式
+ENV CODEC plain
+# ES服务器地址
+ENV ES_SERVER 172.21.14.5:9200
+# 索引名称
+ENV INDICES xg-docker
+```
 
 ### 镜像制作
 
