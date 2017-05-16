@@ -77,6 +77,13 @@ ENV ES_SERVER 172.21.14.5:9200
 ENV INDICES xg-docker
 ```
 
+**注意**
+
+LogFile支持通配符，单个目录和列表。
+
+- `-e LogFile='"/logs/*.log"'`
+- `-e LogFile='["/logs/*.log","/var/log/lastlog"]'`
+
 ### 镜像制作
 
 进入到各个子目录中，修改`Makefile`中的镜像仓库地址为你自己的镜像仓库地址。

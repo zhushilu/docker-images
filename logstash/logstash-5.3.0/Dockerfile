@@ -17,7 +17,9 @@ ENV ES_SERVER 172.21.14.5:9200
 ENV INDICES xg-docker
 ENV CODEC plain
 
-ADD ./tools/node.conf  /usr/local/logstash/agent/
-ADD ./tools/startup.sh /usr/bin/
+ADD ./node.conf  /usr/local/logstash/agent/
+ADD ./docker-entrypoint.sh /usr/bin/
 
-CMD startup.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD $LOGSTASH_HOME/bin/logstash -f $LOGSTASH_HOME/agent/node.conf
