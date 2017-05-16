@@ -81,7 +81,9 @@ ENV INDICES xg-docker
 
 LogFile支持通配符，单个目录和列表。
 
-- `-e LogFile='"/logs/*.log"'`
+在logstash的node.conf配置中`LogFile`对于列表和普通文件目录的配置有所不同，列表不能在两端加引号，而普通文件目录字符串两端必须加引号。
+
+- `-e LogFile='/logs/*.log'`
 - `-e LogFile='["/logs/*.log","/var/log/lastlog"]'`
 
 ### 镜像制作
