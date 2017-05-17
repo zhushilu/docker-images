@@ -7,6 +7,7 @@
 - CentOS 7.2.1511
 - JDK
 - Logstash
+- Filebeat
 
 所有镜像已同步到时速云，可以直接使用。
 
@@ -16,6 +17,7 @@ index.tenxcloud.com/jimmy/jdk:6u25
 index.tenxcloud.com/jimmy/jdk:7u80
 index.tenxcloud.com/jimmy/jdk:8u45
 index.tenxcloud.com/jimmy/logstash:5.3.0
+index.tenxcloud.com/jimmy/filebeat:5.4.0
 ```
 
 ## CentOS 7.2.1511
@@ -85,6 +87,29 @@ LogFile支持通配符，单个目录和列表。
 
 - `-e LogFile='/logs/*.log'`
 - `-e LogFile='["/logs/*.log","/var/log/lastlog"]'`
+
+## Filebeat
+
+基于**Filebeat5.4.0**官方安装包制作。
+
+**使用方式**
+
+修改以下环境变量
+
+```
+# 收集的日志文件目录
+ENV PATHS /var/log/yum.log
+# ES服务器地址
+ENV ES_SERVER 172.23.5.255:9200
+# 索引名称
+ENV INDEX filebeat-test
+# 日志格式
+ENV INPUT_TYPE log
+# ES用户名
+ENV ES_USERNAME elastic
+# ES密码
+ENV ES_PASSWORD changeme
+```
 
 ### 镜像制作
 
