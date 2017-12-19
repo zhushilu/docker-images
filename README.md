@@ -120,6 +120,6 @@ make all
 ```
 ## 链接
 
-[Jimmy Song](http://rootsongjc.github.io/about)
+[Jimmy Song](https://jimmysong.io)
 
 [Kubernetes-handbook](https://github.com/rootsongjc/kubernetes-handbook)
